@@ -621,7 +621,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
         <div class="features-layout">
             <div class="feature">
                 <div class="feature-icon">🧠</div>
-                <h3>MVC Architecture</h3>
+                <h3>Mbc  Architecture</h3>
                 <p>Clean separation between Models, Views, and Controllers keeps your codebase maintainable as it grows.</p>
             </div>
             <div class="feature">
