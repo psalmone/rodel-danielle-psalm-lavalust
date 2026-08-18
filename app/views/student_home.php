@@ -4,187 +4,166 @@
 <meta charset="UTF-8">
 <title><?= $page_title ?? 'Student Home'; ?></title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
 <style>
     :root {
-        --navy: #1b2a41;
-        --navy-deep: #121d2e;
-        --gold: #b08d57;
-        --gold-light: #d9c39a;
-        --paper: #f6f4ef;
-        --ink: #2a2a2a;
-        --muted: #6b6b6b;
-        --rule: #e2ddd1;
+        --lavender: #cdb4f0;
+        --lavender-deep: #a888e0;
+        --mint: #bdeed4;
+        --peach: #ffd7c2;
+        --sky: #c3e4f7;
+        --ink: #4a4458;
+        --muted: #8a8398;
     }
 
     * { box-sizing: border-box; }
 
     body {
-        font-family: 'Source Sans 3', 'Segoe UI', Arial, sans-serif;
-        background: var(--paper);
+        font-family: 'Nunito', 'Segoe UI', Arial, sans-serif;
+        background: linear-gradient(180deg, #faf6ff 0%, #f2f8fb 100%);
         color: var(--ink);
         margin: 0;
+        min-height: 100vh;
     }
 
     nav {
-        background: var(--navy);
-        border-bottom: 3px solid var(--gold);
-        padding: 16px 32px;
+        padding: 20px 32px;
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
 
     .nav-brand {
-        color: var(--gold-light);
-        font-family: 'Playfair Display', Georgia, serif;
-        font-size: 15px;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
+        font-family: 'Quicksand', sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        color: var(--lavender-deep);
     }
 
     nav .links a {
-        color: #eef0f4;
+        color: var(--ink);
         text-decoration: none;
-        margin-left: 28px;
+        margin-left: 22px;
         font-size: 14px;
-        font-weight: 500;
-        letter-spacing: 0.02em;
-        padding-bottom: 4px;
-        border-bottom: 1px solid transparent;
-        transition: border-color 0.2s, color 0.2s;
+        font-weight: 600;
+        padding: 8px 16px;
+        border-radius: 999px;
+        transition: background 0.2s;
     }
 
     nav .links a:hover {
-        color: var(--gold-light);
-        border-bottom-color: var(--gold);
-    }
-
-    .wrap {
-        max-width: 720px;
-        margin: 0 auto;
-        padding: 72px 24px 96px;
-    }
-
-    .eyebrow {
-        text-align: center;
-        text-transform: uppercase;
-        letter-spacing: 0.18em;
-        font-size: 12px;
-        color: var(--gold);
-        font-weight: 600;
-        margin-bottom: 14px;
-    }
-
-    .seal {
-        width: 64px;
-        height: 64px;
-        margin: 0 auto 24px;
-        border: 2px solid var(--gold);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: 'Playfair Display', Georgia, serif;
-        font-size: 20px;
-        font-weight: 700;
-        color: var(--navy);
         background: #fff;
     }
 
-    h1 {
-        font-family: 'Playfair Display', Georgia, serif;
-        font-size: 36px;
-        font-weight: 700;
+    .wrap {
+        max-width: 560px;
+        margin: 0 auto;
+        padding: 64px 24px 96px;
         text-align: center;
-        color: var(--navy);
+    }
+
+    .badge {
+        display: inline-block;
+        background: var(--peach);
+        color: #a3592f;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        padding: 6px 16px;
+        border-radius: 999px;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-family: 'Quicksand', sans-serif;
+        font-size: 32px;
+        font-weight: 700;
+        color: var(--ink);
         margin: 0 0 10px;
     }
 
     .subtitle {
-        text-align: center;
         color: var(--muted);
-        font-size: 15px;
-        margin: 0 0 40px;
+        font-size: 14px;
+        margin: 0 0 36px;
     }
 
-    .divider {
-        width: 72px;
-        height: 2px;
-        background: var(--gold);
-        margin: 0 auto 40px;
-    }
-
-    .panel {
+    .card {
         background: #fff;
-        border: 1px solid var(--rule);
-        border-top: 3px solid var(--navy);
-        padding: 40px 44px;
-        text-align: center;
+        border-radius: 24px;
+        padding: 36px 32px;
+        box-shadow: 0 12px 30px -12px rgba(168, 136, 224, 0.35);
     }
 
-    .panel p {
-        color: #444;
+    .card p {
+        color: #5c5568;
         line-height: 1.75;
-        font-size: 15.5px;
-        margin: 0 0 28px;
+        font-size: 15px;
+        margin: 0 0 26px;
     }
 
     .btn {
         display: inline-block;
-        padding: 13px 34px;
-        background: var(--navy);
-        color: #f6f4ef;
+        padding: 12px 30px;
+        background: var(--lavender);
+        color: #453a63;
         text-decoration: none;
-        font-size: 13.5px;
-        font-weight: 600;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        border: 1px solid var(--navy);
-        transition: background 0.2s, color 0.2s;
+        font-size: 14px;
+        font-weight: 700;
+        border-radius: 999px;
+        transition: background 0.2s, transform 0.2s;
     }
 
     .btn:hover {
-        background: transparent;
-        color: var(--navy);
+        background: var(--lavender-deep);
+        color: #fff;
+        transform: translateY(-1px);
     }
 
-    footer {
-        text-align: center;
-        color: var(--muted);
-        font-size: 12px;
-        letter-spacing: 0.04em;
+    .dots {
         margin-top: 40px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
     }
+
+    .dots span {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        display: inline-block;
+    }
+
+    .dots span:nth-child(1) { background: var(--mint); }
+    .dots span:nth-child(2) { background: var(--peach); }
+    .dots span:nth-child(3) { background: var(--sky); }
 </style>
 </head>
 <body>
 
 <nav>
-    <span class="nav-brand">Student Records Office</span>
+    <span class="nav-brand">🌸 Student Portal</span>
     <span class="links">
         <a href="<?= site_url('student'); ?>">Home</a>
-        <a href="<?= site_url('student/profile'); ?>">Student Profile</a>
+        <a href="<?= site_url('student/profile'); ?>">Profile</a>
     </span>
 </nav>
 
 <div class="wrap">
-    <div class="seal">SP</div>
-    <p class="eyebrow">Official Student Portal</p>
+    <span class="badge">Web Systems &amp; Technologies</span>
     <h1><?= $page_title ?? 'My Student Portal'; ?></h1>
-    <p class="subtitle">Web Systems and Technologies &middot; LavaLust Laboratory Activity</p>
-    <div class="divider"></div>
+    <p class="subtitle">LavaLust Laboratory Activity</p>
 
-    <div class="panel">
+    <div class="card">
         <p>
-            Welcome to the Student Information System. This portal was developed
-            as a laboratory exercise demonstrating routing, controllers, views,
-            and middleware within the LavaLust PHP Framework.
+            Welcome! This is my Student Information System, built with the
+            LavaLust PHP Framework to practice routing, controllers, views,
+            and middleware.
         </p>
-        <a class="btn" href="<?= site_url('student/profile'); ?>">View Student Profile</a>
+        <a class="btn" href="<?= site_url('student/profile'); ?>">View My Profile</a>
     </div>
 
-    <footer>LavaLust MVC Framework &nbsp;&bull;&nbsp; Laboratory Activity No. 3</footer>
+    <div class="dots"><span></span><span></span><span></span></div>
 </div>
 
 </body>
