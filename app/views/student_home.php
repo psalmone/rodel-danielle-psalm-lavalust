@@ -4,55 +4,44 @@
 <meta charset="UTF-8">
 <title><?= $page_title ?? 'Student Home'; ?></title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-    :root {
-        --lavender: #cdb4f0;
-        --lavender-deep: #a888e0;
-        --mint: #bdeed4;
-        --peach: #ffd7c2;
-        --sky: #c3e4f7;
-        --ink: #4a4458;
-        --muted: #8a8398;
-    }
-
     * { box-sizing: border-box; }
 
     body {
-        font-family: 'Nunito', 'Segoe UI', Arial, sans-serif;
-        background: linear-gradient(180deg, #faf6ff 0%, #f2f8fb 100%);
-        color: var(--ink);
+        font-family: 'Nunito', -apple-system, 'Segoe UI', Arial, sans-serif;
+        background: #eaf4fb;
+        color: #2e3a46;
         margin: 0;
         min-height: 100vh;
     }
 
     nav {
-        padding: 20px 32px;
+        padding: 24px 32px;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        background: #ffffff;
+        border-bottom: 1px solid #dceaf5;
     }
 
     .nav-brand {
-        font-family: 'Quicksand', sans-serif;
         font-weight: 700;
         font-size: 16px;
-        color: var(--lavender-deep);
+        color: #4a90c4;
     }
 
     nav .links a {
-        color: var(--ink);
+        color: #4a90c4;
         text-decoration: none;
         margin-left: 22px;
         font-size: 14px;
         font-weight: 600;
-        padding: 8px 16px;
-        border-radius: 999px;
-        transition: background 0.2s;
     }
 
     nav .links a:hover {
-        background: #fff;
+        color: #2f6f9e;
+        text-decoration: underline;
     }
 
     .wrap {
@@ -64,8 +53,8 @@
 
     .badge {
         display: inline-block;
-        background: var(--peach);
-        color: #a3592f;
+        background: #d6ecf9;
+        color: #2f6f9e;
         font-size: 12px;
         font-weight: 700;
         letter-spacing: 0.03em;
@@ -75,28 +64,27 @@
     }
 
     h1 {
-        font-family: 'Quicksand', sans-serif;
-        font-size: 32px;
-        font-weight: 700;
-        color: var(--ink);
+        font-size: 30px;
+        font-weight: 800;
+        color: #2e3a46;
         margin: 0 0 10px;
     }
 
     .subtitle {
-        color: var(--muted);
+        color: #7c93a8;
         font-size: 14px;
         margin: 0 0 36px;
     }
 
     .card {
-        background: #fff;
-        border-radius: 24px;
+        background: #ffffff;
+        border-radius: 16px;
         padding: 36px 32px;
-        box-shadow: 0 12px 30px -12px rgba(168, 136, 224, 0.35);
+        box-shadow: 0 8px 24px -12px rgba(74, 144, 196, 0.25);
     }
 
     .card p {
-        color: #5c5568;
+        color: #4a5b6b;
         line-height: 1.75;
         font-size: 15px;
         margin: 0 0 26px;
@@ -105,8 +93,8 @@
     .btn {
         display: inline-block;
         padding: 12px 30px;
-        background: var(--lavender);
-        color: #453a63;
+        background: #4a90c4;
+        color: #ffffff;
         text-decoration: none;
         font-size: 14px;
         font-weight: 700;
@@ -115,34 +103,15 @@
     }
 
     .btn:hover {
-        background: var(--lavender-deep);
-        color: #fff;
+        background: #2f6f9e;
         transform: translateY(-1px);
     }
-
-    .dots {
-        margin-top: 40px;
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    .dots span {
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        display: inline-block;
-    }
-
-    .dots span:nth-child(1) { background: var(--mint); }
-    .dots span:nth-child(2) { background: var(--peach); }
-    .dots span:nth-child(3) { background: var(--sky); }
 </style>
 </head>
 <body>
 
 <nav>
-    <span class="nav-brand">🌸 Student Portal</span>
+    <span class="nav-brand">Student Portal</span>
     <span class="links">
         <a href="<?= site_url('student'); ?>">Home</a>
         <a href="<?= site_url('student/profile'); ?>">Profile</a>
@@ -162,8 +131,6 @@
         </p>
         <a class="btn" href="<?= site_url('student/profile'); ?>">View My Profile</a>
     </div>
-
-    <div class="dots"><span></span><span></span><span></span></div>
 </div>
 
 </body>
