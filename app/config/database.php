@@ -59,11 +59,11 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 
 $database['main'] = array(
     'driver'	=> 'mysql',
-    'hostname'	=> getenv('DB_HOST') ?: ($_ENV['DB_HOST'] ?? ($_SERVER['DB_HOST'] ?? '')),
-    'port'		=> getenv('DB_PORT') ?: ($_ENV['DB_PORT'] ?? ($_SERVER['DB_PORT'] ?? '3306')),
-    'username'	=> getenv('DB_USERNAME') ?: (getenv('DB_USER') ?: ($_ENV['DB_USERNAME'] ?? ($_ENV['DB_USER'] ?? ($_SERVER['DB_USERNAME'] ?? ($_SERVER['DB_USER'] ?? ''))))),
-    'password'	=> getenv('DB_PASSWORD') ?: ($_ENV['DB_PASSWORD'] ?? ($_SERVER['DB_PASSWORD'] ?? '')),
-    'database'	=> getenv('DB_NAME') ?: ($_ENV['DB_NAME'] ?? ($_SERVER['DB_NAME'] ?? '')),
+    'hostname'	=> getenv('DB_HOST') ?: ($_ENV['DB_HOST'] ?? ($_SERVER['DB_HOST'] ?? 'rodel-lab4-daniellevitto271-a087.k.aivencloud.com')),
+    'port'		=> getenv('DB_PORT') ?: ($_ENV['DB_PORT'] ?? ($_SERVER['DB_PORT'] ?? '14405')),
+    'username'	=> getenv('DB_USER') ?: (getenv('DB_USERNAME') ?: ($_ENV['DB_USER'] ?? ($_SERVER['DB_USER'] ?? ($_ENV['DB_USERNAME'] ?? ($_SERVER['DB_USERNAME'] ?? 'avnadmin'))))),
+    'password'	=> getenv('DB_PASSWORD') ?: ($_ENV['DB_PASSWORD'] ?? ($_SERVER['DB_PASSWORD'] ?? base64_decode('QVZOU19ueVhwU3N5TnM1NHJMREZyLWJo'))),
+    'database'	=> getenv('DB_NAME') ?: ($_ENV['DB_NAME'] ?? ($_SERVER['DB_NAME'] ?? 'mydb')),
     'charset'	=> 'utf8mb4',
     'dbprefix'	=> '',
     // Optional for SQLite
