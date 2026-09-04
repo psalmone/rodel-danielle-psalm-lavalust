@@ -80,7 +80,8 @@ $config['environment'] = getenv('APP_ENV') ?: 'development';
 |
 */
 $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https://' : 'http://';
-$config['base_url'] = $protocol . $_SERVER['HTTP_HOST'] . '/';
+$host = $_SERVER['HTTP_HOST'] ?? 'localhost';
+$config['base_url'] = $protocol . $host . '/';
 
 /*
 |--------------------------------------------------------------------------
