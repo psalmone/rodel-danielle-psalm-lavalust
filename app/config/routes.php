@@ -52,3 +52,16 @@ $router->get('student/profile', 'StudentController::profile', ['middleware' => '
 
 $router->get('/users', 'UserController::index');
 $router->get('/user', 'UserController::index');
+
+// Auth routes
+$router->get('login', 'AuthController::login');
+$router->post('login/do_login', 'AuthController::do_login');
+$router->get('logout', 'AuthController::logout');
+
+// Product CRUD routes (protected)
+$router->get('products', 'ProductController::index', ['middleware' => 'AuthMiddleware']);
+$router->get('products/create', 'ProductController::create', ['middleware' => 'AuthMiddleware']);
+$router->post('products/store', 'ProductController::store', ['middleware' => 'AuthMiddleware']);
+$router->get('products/edit/{id}', 'ProductController::edit', ['middleware' => 'AuthMiddleware']);
+$router->post('products/update/{id}', 'ProductController::update', ['middleware' => 'AuthMiddleware']);
+$router->post('products/destroy/{id}', 'ProductController::destroy', ['middleware' => 'AuthMiddleware']);
