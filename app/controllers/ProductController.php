@@ -31,6 +31,7 @@ class ProductController extends Controller
             'price'        => $_POST['price'],
             'quantity'     => $_POST['quantity'],
         ]);
+        header('Cache-Control: no-store, no-cache, must-revalidate');
         redirect(site_url('products'));
         exit;
     }
@@ -55,6 +56,7 @@ class ProductController extends Controller
             'price'        => $_POST['price'],
             'quantity'     => $_POST['quantity'],
         ]);
+        header('Cache-Control: no-store, no-cache, must-revalidate');
         redirect(site_url('products'));
         exit;
     }
@@ -63,6 +65,7 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $this->Product->delete($id);
+        header('Cache-Control: no-store, no-cache, must-revalidate');
         redirect(site_url('products'));
         exit;
     }

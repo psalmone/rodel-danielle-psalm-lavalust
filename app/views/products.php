@@ -141,8 +141,8 @@
             <td>
               <div class="actions">
                 <a class="btn-edit" href="<?= site_url('products/edit/' . $p['id']); ?>">Edit</a>
-                <form method="POST" action="<?= site_url('products/destroy/' . $p['id']); ?>" onsubmit="return confirm('Delete this product?');">
-                  <button type="submit" class="btn-delete">Delete</button>
+                <form method="POST" action="<?= site_url('products/destroy/' . $p['id']); ?>" id="del-<?= $p['id']; ?>">
+                  <button type="button" class="btn-delete" onclick="if(confirm('Delete this product?')) document.getElementById('del-<?= $p['id']; ?>').submit();">Delete</button>
                 </form>
               </div>
             </td>
